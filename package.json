@@ -1,0 +1,45 @@
+{
+  "name": "js-kube-client",
+  "version": "0.0.1",
+  "description": "A javascript client for Kubernetes API",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "4crud": "0.0.3",
+    "k8sinclient": "0.0.5"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^7.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha",
+    "start": "node index.js"
+  },
+  "author": "gh3s",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gh3s/k8sNodeApi.git"
+  },
+  "keywords": [
+    "nodejs",
+    "kubernetes",
+    "api",
+    "k8s",
+    "javascript"
+  ],
+  "bugs": {
+    "url": "https://github.com/gh3s/k8sNodeApi/issues"
+  },
+  "homepage": "https://github.com/gh3s/k8sNodeApi#readme"
+}
