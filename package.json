@@ -29,7 +29,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gh3s/k8sNodeApi.git"
+    "url": "git+https://github.com/gh3s/js-kube-client.git"
   },
   "keywords": [
     "nodejs",
@@ -39,7 +39,7 @@
     "javascript"
   ],
   "bugs": {
-    "url": "https://github.com/gh3s/k8sNodeApi/issues"
+    "url": "https://github.com/gh3s/js-kube-client/issues"
   },
-  "homepage": "https://github.com/gh3s/k8sNodeApi#readme"
+  "homepage": "https://github.com/gh3s/js-kube-client#readme"
 }
