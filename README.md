@@ -12,15 +12,31 @@ For those wanting to use Nodejs to interface Kubernetes API, here is been develo
 ### Prerequisites
 
 * nodejs 12.x +
+* docker 18.x +
 * kubernetes 1.17.0 (checked)
 
 ### Installing
 
+1. Install docker [https://docs.docker.com/install/](https://docs.docker.com/install/) and build image:
 ```sh
-npm install js-kube-client --save
+docker build -t gh3s/js-kube-client -f build/Dockerfile .
 ```
+2. Install kubernetes [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/) 
 
-**POST / PUT** requests `<nodeip>:<nodeport>` with JSON data:
+## Running
+
+```sh
+npm start
+```
+1. Apply the deployment.yaml:
+```sh
+kubectl apply -f kubernetes/deployment.yaml
+```
+2. Apply service.yaml:
+```sh
+kubectl apply -f kubernetes/service.yaml
+```
+3. Create a job using a POST request to `<nodeip>:<nodeport>` where `<nodeip>` is a worker node IP.  Use this JSON data for test purposes:
 ```JSON
 const jobYaml = {
   "apiVersion": "batch/v1",
@@ -48,15 +64,8 @@ const jobYaml = {
   }
 }
 ```
-
-**GET / DELETE** requests to `<nodeip>:<nodeport>?name=pi-with-ttl`
-
-
-## Running
-
-```sh
-npm start
-```
+4. Verify the job with a GET request to `<nodeip>:<nodeport>?name=pi-with-ttl`
+5. Delete the job with a DELETE request to the same address.
 
 ## Release History
 
