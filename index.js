@@ -42,6 +42,30 @@ server
       res.end()
     })
   })
+  .get('/cronjob', (req, res) => {
+    cronjob.read('default', req.search.get('name'), (response) => {
+      res.statusCode = 200
+      res.setHeader('Content-Type', 'application/json')
+      res.write(JSON.stringify(response))
+      res.end()
+    })
+  })
+  .post('/cronjob', (req, res) => {
+    cronjob.create('default', req.body, (response) => {
+      res.statusCode = 200
+      res.setHeader('Content-Type', 'application/json')
+      res.write(JSON.stringify(response))
+      res.end()
+    })
+  })
+  .delete('/cronjob', (req, res) => {
+    cronjob.delete('default', req.search.get('name'), (response) => {
+      res.statusCode = 200
+      res.setHeader('Content-Type', 'application/json')
+      res.write(JSON.stringify(response))
+      res.end()
+    })
+  })
   .start(port, `starting at port ${port}`) //start server at port 8080
 
  /**
