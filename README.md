@@ -5,7 +5,7 @@
 [![HitCount](https://img.shields.io/github/issues/gh3s/js-kube-client/total.svg)](http://hits.dwyl.io/GH3S/JS-KUBE-CLIENT)
 [![npm](https://img.shields.io/npm/dw/js-kube-client)](https://www.npmjs.com/package/js-kube-client)
 
-## Getting Started
+## Description
 
 For those wanting to use Nodejs to interface Kubernetes API, here is been developed an API using native nodejs modules, to be used as deployment that manages jobs.
 
@@ -23,11 +23,28 @@ docker build -t gh3s/js-kube-client -f build/Dockerfile .
 ```
 2. Install kubernetes [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/) 
 
-## Running
+## Testing
 
+1. Delete 'cluster' in index.js.
+```js
+const deployment = new Deployment('cluster')
+const cronjob = new CronJob('cluster')
+```
+2. Start server
 ```sh
 npm start
 ```
+3. Deploy a test deployment in your cluster and test the code:
+```sh
+apply -f test/testjob.yaml
+```
+4. Wait the job starts and search for it.
+```sh
+curl localhost:8080/job?name=pi-with-ttl
+```
+
+## Getting started
+
 1. Apply the deployment.yaml:
 ```sh
 kubectl apply -f kubernetes/deployment.yaml
@@ -64,13 +81,17 @@ const jobYaml = {
   }
 }
 ```
-4. Verify the job with a GET request to `<nodeip>:<nodeport>?name=pi-with-ttl`
+
+4. Verify the job with a GET request to `<nodeip>:<nodeport>/job?name=pi-with-ttl`
+
 5. Delete the job with a DELETE request to the same address.
 
 ## Release History
 
 * 0.0.1
     * CHANGE: Work in progress
+* 0.0.3
+    * ADDED: Deployments and cronjobs
 
 ## Authors
 

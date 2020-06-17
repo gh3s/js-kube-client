@@ -1,13 +1,15 @@
 /**
  * * IMPORTS
  */
-const { Crud } = require('4crud')
-const Client = require('k8sinclient')
+const Server = require('4crud')
+const { Job, Deployment, CronJob } = require('k8sinclient')
 /**
  * * INSTANCES
  */
-const server = new Crud()
-const jobClient = new Client('cluster') // 'cluster' is for in-cluster clients, 'default' is for out-cluster ones.
+const server = new Server()
+const deployment = new Deployment('cluster')
+const cronjob = new CronJob('cluster')
+//const jobClient = new Cronjob() // 'cluster' is for in-cluster clients, 'default' is for out-cluster ones.
 /**
  * * CONSTANTS
  */
@@ -16,24 +18,24 @@ const port = 8080
  * * MAIN
  */
 server
-  .get((req, res) => {
-    jobClient.read('default', req.search.get('name'), (response) => {
+  .get('/deployment', (req, res) => {
+    deployment.read('default', req.search.get('name'), (response) => {
       res.statusCode = 200
       res.setHeader('Content-Type', 'application/json')
       res.write(JSON.stringify(response))
       res.end()
     })
   })
-  .post((req, res) => {
-    jobClient.create('default', req.body, (response) => {
+  .post('/deployment', (req, res) => {
+    deployment.create('default', req.body, (response) => {
       res.statusCode = 200
       res.setHeader('Content-Type', 'application/json')
       res.write(JSON.stringify(response))
       res.end()
     })
   })
-  .delete((req, res) => {
-    jobClient.delete('default', req.search.get('name'), (response) => {
+  .delete('/deployment', (req, res) => {
+    deployment.delete('default', req.search.get('name'), (response) => {
       res.statusCode = 200
       res.setHeader('Content-Type', 'application/json')
       res.write(JSON.stringify(response))
