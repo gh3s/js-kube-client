@@ -1,9 +1,10 @@
+#.ignore files
+.dockerignore
+.gitignore
+
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 
 # Kubernetes YAMLs
 kubernetes
-
-# Test directory
-test

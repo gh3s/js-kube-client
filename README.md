@@ -15,7 +15,7 @@ For those wanting to use Nodejs to interface Kubernetes API, here is been develo
 * docker 18.x +
 * kubernetes 1.17.0 (checked)
 
-### Installing
+## Build and run a docker container
 
 1. Install docker [https://docs.docker.com/install/](https://docs.docker.com/install/) and build image:
 ```sh
@@ -23,7 +23,7 @@ docker build -t gh3s/js-kube-client -f build/Dockerfile .
 ```
 2. Install kubernetes [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/) 
 
-## Testing
+## Testing using local server
 
 1. Delete 'cluster' in index.js.
 ```js
@@ -43,7 +43,7 @@ apply -f test/testjob.yaml
 curl localhost:8080/job?name=pi-with-ttl
 ```
 
-## Getting started
+## Run in Kubernetes
 
 1. Apply the deployment.yaml:
 ```sh
@@ -86,12 +86,16 @@ const jobYaml = {
 
 5. Delete the job with a DELETE request to the same address.
 
+
+
 ## Release History
 
 * 0.0.1
     * CHANGE: Work in progress
 * 0.0.3
     * ADDED: Deployments and cronjobs
+* 0.0.5
+    * ADDED: Persistent volumes and Persistent volume claims
 
 ## Authors
 
