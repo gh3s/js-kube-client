@@ -1,6 +1,6 @@
 {
   "name": "js-kube-client",
-  "version": "0.0.5",
+  "version": "0.0.51",
   "description": "A javascript client for Kubernetes API",
   "main": "index.js",
   "directories": {
