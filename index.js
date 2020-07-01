@@ -4,8 +4,8 @@
 const Server = require('4crud')
 const { Deployment, CronJob, PersistentVolume, PersistentVolumeClaim } = require('k8sinclient')
 const args = process.argv.slice(2)
-const test = args[0] // 'cluster' is for in-cluster clients, 'default' is for out-cluster ones.
-const port = Number(args[1])
+const test = (args[0] === 'true') // 'false' or empty is for in-cluster clients, 'true' is for local test purposes.
+const port = 8080
 
 /**
  * * INSTANCES
