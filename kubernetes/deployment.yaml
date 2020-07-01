@@ -15,7 +15,7 @@ spec:
         app.kubernetes.io/name: js-kube-client
     spec:
       containers:
-        - image: gh3s/js-kube-client:v0.0.52
+        - image: gh3s/js-kube-client:v0.0.53
           name: js-kube-client
           resources: {}
           ports:

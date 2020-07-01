@@ -88,6 +88,21 @@ const jobYaml = {
 
 5. Delete the job with a DELETE request to the same address.
 
+## To update bundle
+
+Update version in:
+
+1. kubernetes/deployment.yaml
+
+2. build/Dockerfile
+
+3. package.json using 'npm init'
+
+4. commit modifications and push to remote
+
+5. publish npm
+
+6. push to dockerhub
 
 
 ## Release History
