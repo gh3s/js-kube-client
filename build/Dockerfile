@@ -1,5 +1,5 @@
 FROM node:alpine
-LABEL com.jskubeclient.version="0.0.51"
+LABEL com.jskubeclient.version="0.0.52"
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
