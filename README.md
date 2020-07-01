@@ -15,7 +15,7 @@ For those wanting to use Nodejs to interface Kubernetes API, here is been develo
 * docker 18.x +
 * kubernetes 1.17.0 (checked)
 
-## Build and run a docker container
+## Build a docker container 
 
 1. Install docker [https://docs.docker.com/install/](https://docs.docker.com/install/) and build image:
 ```sh
@@ -32,15 +32,17 @@ const cronjob = new CronJob('cluster')
 ```
 2. Start server
 ```sh
-npm start
+npm start test <port>
 ```
+cluster is a string for in-cluster appliances, default is for test purposes
+
 3. Deploy a test deployment in your cluster and test the code:
 ```sh
 apply -f test/testjob.yaml
 ```
 4. Wait the job starts and search for it.
 ```sh
-curl localhost:8080/job?name=pi-with-ttl
+curl localhost:<port>/job?name=pi-with-ttl
 ```
 
 ## Run in Kubernetes

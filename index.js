@@ -3,21 +3,19 @@
  */
 const Server = require('4crud')
 const { Deployment, CronJob, PersistentVolume, PersistentVolumeClaim } = require('k8sinclient')
-const test = true // 'cluster' is for in-cluster clients, 'default' is for out-cluster ones.
+const args = process.argv.slice(2)
+const test = args[0] // 'cluster' is for in-cluster clients, 'default' is for out-cluster ones.
+const port = Number(args[1])
+
 /**
  * * INSTANCES
  */
-console.log(test)
 const server = new Server()
 const deployment = new Deployment(test ? 'default' : 'cluster')
 const cronjob = new CronJob(test ? 'default' : 'cluster')
 const persistentVolume = new PersistentVolume(test ? 'default' : 'cluster')
 const persistentVolumeClaim = new PersistentVolumeClaim(test ? 'default' : 'cluster')
 
-/**
- * * CONSTANTS
- */
-const port = 8080
 /**
  * * MAIN
  */

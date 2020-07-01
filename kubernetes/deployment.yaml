@@ -15,9 +15,11 @@ spec:
         app.kubernetes.io/name: js-kube-client
     spec:
       containers:
-      - image: gh3s/js-kube-client:v0.0.5
-        imagePullPolicy: Always
-        name: js-kube-client
-        resources: {}
-        ports:
-        - containerPort: 8080
+        - image: gh3s/js-kube-client:v0.0.5
+          args: [cluster, 8080]
+          imagePullPolicy: Always
+          name: js-kube-client
+          resources: {}
+          ports:
+            - containerPort: 8080
+

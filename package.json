@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "4crud": "0.1.4",
-    "k8sinclient": "0.1.2",
+    "k8sinclient": "0.1.21",
     "npm-check-updates": "^7.0.1"
   },
   "devDependencies": {
