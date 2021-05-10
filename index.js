@@ -6,7 +6,6 @@ const { Deployment, CronJob, PersistentVolume, PersistentVolumeClaim } = require
 const args = process.argv.slice(2)
 const test = (args[0] === 'true') // 'false' or empty is for in-cluster clients, 'true' is for local test purposes.
 const port = 8080
-
 /**
  * * INSTANCES
  */
@@ -15,7 +14,6 @@ const deployment = new Deployment(test ? 'default' : 'cluster')
 const cronjob = new CronJob(test ? 'default' : 'cluster')
 const persistentVolume = new PersistentVolume(test ? 'default' : 'cluster')
 const persistentVolumeClaim = new PersistentVolumeClaim(test ? 'default' : 'cluster')
-
 /**
  * * MAIN
  */
@@ -123,7 +121,6 @@ server
     })
   })
   .start(port, `starting at port ${port}`) // start server at port 8080
-
 /**
  * TODO: implement message and server ip for the start method
  */

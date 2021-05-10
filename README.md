@@ -88,6 +88,8 @@ const jobYaml = {
 
 5. Delete the job with a DELETE request to the same address.
 
+NOTE: For minikube testing: ```minikube service --url js-kube-client```
+
 ## To update bundle
 
 Update version in:
@@ -113,6 +115,8 @@ Update version in:
     * ADDED: Deployments and cronjobs
 * 0.0.5
     * ADDED: Persistent volumes and Persistent volume claims
+* 0.1.0
+    * UPDATE: Security faults corrected
 
 ## Authors
 
