@@ -87,8 +87,11 @@ const jobYaml = {
 4. Verify the job with a GET request to `<nodeip>:<nodeport>/job?name=pi-with-ttl`
 
 5. Delete the job with a DELETE request to the same address.
+## NOTES: 
+1. For minikube testing: ```minikube service --url js-kube-client```
 
-NOTE: For minikube testing: ```minikube service --url js-kube-client```
+2. For GKE consider RBAC yaml file inside kubernetes folder
+
 
 ## To update bundle
 
@@ -117,6 +120,8 @@ Update version in:
     * ADDED: Persistent volumes and Persistent volume claims
 * 0.1.0
     * UPDATE: Security faults corrected
+* 0.1.1
+    * ADDED: GKE RBAC yaml file
 
 ## Authors
 
