@@ -1,5 +1,1 @@
-# .ignore files
-.gitignore
-.dockerignore
-# Dependency directory
 node_modules
