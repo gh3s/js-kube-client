@@ -113,15 +113,17 @@ Update version in:
 ## Release History
 
 * 0.0.1
-    * CHANGE: Work in progress
+  * CHANGE: Work in progress
 * 0.0.3
-    * ADDED: Deployments and cronjobs
+  * ADDED: Deployments and cronjobs
 * 0.0.5
-    * ADDED: Persistent volumes and Persistent volume claims
+  * ADDED: Persistent volumes and Persistent volume claims
 * 0.1.0
-    * UPDATE: Security faults corrected
+  * UPDATE: Security faults corrected
 * 0.1.1
-    * ADDED: GKE RBAC yaml file
+  * ADDED: GKE RBAC yaml file
+* 0.2.0
+  * UPDATE: Security faults corrected
 
 ## Authors
 

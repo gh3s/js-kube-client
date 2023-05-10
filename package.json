@@ -1,26 +1,10 @@
 {
   "name": "js-kube-client",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A javascript client for Kubernetes API",
   "main": "index.js",
   "directories": {
     "test": "test"
-  },
-  "dependencies": {
-    "4crud": "0.1.4",
-    "k8sinclient": "0.1.21",
-    "npm-check-updates": "^7.0.1"
-  },
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "chai-http": "^4.3.0",
-    "eslint": "^7.3.1",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "mocha": "^8.0.1"
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha",
@@ -42,5 +26,13 @@
   "bugs": {
     "url": "https://github.com/gh3s/js-kube-client/issues"
   },
-  "homepage": "https://github.com/gh3s/js-kube-client#readme"
+  "homepage": "https://github.com/gh3s/js-kube-client#readme",
+  "dependencies": {
+    "4crud": "^2.0.0",
+    "k8sinclient": "^0.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  }
 }
