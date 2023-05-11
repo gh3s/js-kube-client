@@ -122,8 +122,9 @@ Update version in:
   * UPDATE: Security faults corrected
 * 0.1.1
   * ADDED: GKE RBAC yaml file
-* 0.2.0
+* 0.2.1
   * UPDATE: Security faults corrected
+  * UPDATE: 4crud updated
 
 ## Authors
 
