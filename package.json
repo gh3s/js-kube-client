@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/gh3s/js-kube-client#readme",
   "dependencies": {
-    "4crud": "^2.0.0",
+    "4crud": "^2.1.0",
     "k8sinclient": "^0.2.0"
   },
   "devDependencies": {

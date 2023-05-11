@@ -5,7 +5,7 @@ const Server = require('4crud')
 const { Deployment, CronJob, PersistentVolume, PersistentVolumeClaim } = require('k8sinclient')
 const args = process.argv.slice(2)
 const test = (args[0] === 'true') // 'false' or empty is for in-cluster clients, 'true' is for local test purposes.
-console.log(test)
+console.log(test && 'Test mode')
 const port = 8080
 /**
  * * INSTANCES
@@ -104,7 +104,6 @@ server
     })
   })
   .post('/persistentvolume', (req, res) => {
-    console.log('ok')
     persistentVolume.create(req.body, (response) => {
       res.statusCode = 200
       res.setHeader('Content-Type', 'application/json')
@@ -114,14 +113,13 @@ server
   })
   .delete('/persistentvolume', (req, res) => {
     persistentVolume.delete(req.search.get('name'), (response) => {
-      console.log('ok')
       res.statusCode = 200
       res.setHeader('Content-Type', 'application/json')
       res.write(JSON.stringify(response))
       res.end()
     })
   })
-  .start(port, `starting at port ${port}`) // start server at port 8080
+  .start(port) // start server at port 8080
 /**
  * TODO: implement message and server ip for the start method
  */
